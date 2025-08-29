@@ -6,7 +6,11 @@ export interface Character {
   name: string;
   status: 'Alive' | 'Dead' | 'unknown';
   species: string;
+  type?: string;
+  gender?: string;
   image: string;
+  origin?: { name: string };
+  location?: { name: string };
 }
 
 export interface ApiInfo {

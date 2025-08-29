@@ -1,26 +1,31 @@
-import { NavLink, Routes, Route } from 'react-router-dom'
-import CharactersPage from './pages/characters/ui/CharactersPage'
-import CharacterDetailsPage from './pages/character-details/ui/CharacterDetailsPage'
-import FavoritesPage from './pages/favorites/ui/FavoritesPage'
+import { NavLink, Route, Routes } from 'react-router-dom'
+import CharactersPage from '@/pages/characters/ui/CharactersPage'
+import CharacterDetailsPage from '@/pages/character-details/ui/CharacterDetailsPage'
+import FavoritesPage from '@/pages/favorites/ui/FavoritesPage'
+import styles from './entities/';
+
 
 export default function App() {
   return (
-    <div style={{maxWidth: 1024, margin: '0 auto', padding: 16}}>
-      <header style={{display: 'flex', gap: 12, marginBottom: 16}}>
-        <NavLink to="/characters">Персонажи</NavLink>
-        <NavLink to="/favorites">Избранное</NavLink>
+    <div className="app">
+      <header className="topbar">
+        <nav className="nav">
+          <NavLink to="/characters" className="nav__link">Персонажи</NavLink>
+          <NavLink to="/favorites" className="nav__link">Избранное</NavLink>
+        </nav>
       </header>
 
-      <Routes>
-        <Route path="/" element={<CharactersPage />} />
-        <Route path="/characters" element={<CharactersPage />} />
-        <Route path="/characters/:id" element={<CharacterDetailsPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-      </Routes>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<CharactersPage />} />
+          <Route path="/characters" element={<CharactersPage />} />
+          <Route path="/characters/:id" element={<CharacterDetailsPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+        </Routes>
+      </main>
     </div>
   )
 }
-
 
 
 

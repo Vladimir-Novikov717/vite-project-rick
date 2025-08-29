@@ -1,26 +1,73 @@
-.characters-page {
-  min-height: 100vh; /* На всю высоту экрана */
+.page {
+  min-height: 100vh;
+  padding: 20px;
   background: url('/space-bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  padding: 20px;
-}
-
-.characters-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
-}
-
-.card {
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  overflow: hidden;
   color: white;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Фильтры */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  flex: 1;
+}
+
+/* Уведомления */
+.notice {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.error {
+  color: #ff5555;
+}
+
+/* Сетка карточек */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Пагинация */
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.4);
 }
